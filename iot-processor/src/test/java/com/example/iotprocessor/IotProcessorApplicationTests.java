@@ -1,13 +1,13 @@
-package cnse.iotprocessing;
+package com.example.iotprocessor;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class IoTProcessingApplicationTests {
+class IotProcessorApplicationTests {
 
-	@Test
-	void contextLoads() {
-	}
+    @Test
+    void contextLoads() {
+    }
 
 }
