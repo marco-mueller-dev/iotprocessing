@@ -67,8 +67,18 @@ public class SensorGenerator {
                 Instant.now()
         );
 
+
+        // Maximal 10 Einträge halten
+        long count = repository.count();
+        if (count >= 10) {
+            SensorData oldest = repository.findAllByOrderByTimestampAsc().get(0);
+            repository.delete(oldest);
+        }
+
         repository.save(data);
     }
+
+
     private double randTemp () {
         int a = ThreadLocalRandom.current().nextInt(0, 3);
         if (a == 2) {
