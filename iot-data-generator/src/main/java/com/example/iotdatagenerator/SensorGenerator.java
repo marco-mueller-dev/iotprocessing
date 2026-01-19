@@ -19,7 +19,7 @@ public class SensorGenerator {
         return rateMillis;
     }
 
-    private  long rateMillis = 1;
+    private  long rateMillis = 3000;
 
     public SensorGenerator(SensorDataRepository repository) {
         this.repository = repository;
@@ -53,7 +53,7 @@ public class SensorGenerator {
         while (true) {
             try {
                 Thread.sleep(rateMillis);
-                rateMillis += rateMillis;
+               // rateMillis += rateMillis;
             } catch (Exception e) {
                 e.printStackTrace();
             }
@@ -62,11 +62,21 @@ public class SensorGenerator {
 
     private void generate() {
         SensorData data = new SensorData(
-                UUID.randomUUID().toString(),
-                ThreadLocalRandom.current().nextDouble(10, 30),
+                "Device-" + ThreadLocalRandom.current().nextInt(0, 10),
+                randTemp(),
                 Instant.now()
         );
 
         repository.save(data);
+    }
+    private double randTemp () {
+        int a = ThreadLocalRandom.current().nextInt(0, 3);
+        if (a == 2) {
+            double anomalieTemp = ThreadLocalRandom.current().nextDouble(-1000, 1000);
+            return anomalieTemp = Math.round(anomalieTemp * 100.0) / 100.0;
+        } else {
+            double temp = ThreadLocalRandom.current().nextDouble(10, 30);
+            return temp = Math.round(temp * 100.0) / 100.0;
+        }
     }
 }
