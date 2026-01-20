@@ -1,4 +1,4 @@
-package com.example.iotdatagenerator;
+package com.example.common.dto;
 
 import java.time.Instant;
 

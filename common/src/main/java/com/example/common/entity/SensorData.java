@@ -1,4 +1,4 @@
-package com.example.iotdatagenerator;
+package com.example.common.entity;
 
 import jakarta.persistence.*;
 import java.time.Instant;

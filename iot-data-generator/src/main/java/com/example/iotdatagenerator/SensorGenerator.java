@@ -1,14 +1,12 @@
 package com.example.iotdatagenerator;
 
-import com.example.iotdatagenerator.SensorData;
-import com.example.iotdatagenerator.SensorDataRepository;
+import com.example.common.entity.SensorData;
+import com.example.common.repository.SensorDataRepository;
 import jakarta.annotation.PostConstruct;
 import org.springframework.stereotype.Component;
 
 import java.time.Instant;
-import java.util.UUID;
 import java.util.concurrent.ThreadLocalRandom;
-import java.util.concurrent.atomic.AtomicLong;
 
 @Component
 public class SensorGenerator {
