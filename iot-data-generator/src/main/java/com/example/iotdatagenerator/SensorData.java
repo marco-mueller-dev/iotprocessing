@@ -25,5 +25,5 @@ public class SensorData {
         this.timestamp = timestamp;
     }
 
-    // Getter & Setter
+
 }
