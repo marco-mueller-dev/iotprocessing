@@ -9,6 +9,7 @@ import tools.jackson.databind.ObjectMapper;
 
 import java.time.Instant;
 import java.util.concurrent.ThreadLocalRandom;
+import java.util.concurrent.atomic.AtomicLong;
 
 @Component
 public class SensorGeneratorone {
@@ -16,7 +17,7 @@ public class SensorGeneratorone {
     private final KafkaTemplate<String, byte[]> kafkaTemplate;
     private final ObjectMapper objectMapper;
     private final String topic = "sensor-data";
-    private final long rateMillis = 3000;
+    private final AtomicLong rateMillis = new AtomicLong(3000);
 
     public SensorGeneratorone(
             KafkaTemplate<String, byte[]> kafkaTemplate,
@@ -24,6 +25,12 @@ public class SensorGeneratorone {
         this.kafkaTemplate = kafkaTemplate;
         this.objectMapper = objectMapper;
     }
+
+    public void setRateMillis(Long newRate) {
+        rateMillis.set(newRate);
+        System.out.println("Neue Rate: " + newRate + " ms");
+    }
+
 
     @PostConstruct
     public void start() {
@@ -36,7 +43,7 @@ public class SensorGeneratorone {
         while (true) {
             try {
                 sendData();
-                Thread.sleep(rateMillis);
+                Thread.sleep(rateMillis.get());
             } catch (InterruptedException e) {
                 Thread.currentThread().interrupt();
                 break;

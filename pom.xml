@@ -21,6 +21,7 @@
         <module>common</module>
         <module>iot-data-generator</module>
         <module>iot-processor</module>
+        <module>iot-frontend</module>
     </modules>
 
 </project>
