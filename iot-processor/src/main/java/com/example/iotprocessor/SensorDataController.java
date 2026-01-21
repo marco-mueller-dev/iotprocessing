@@ -19,6 +19,12 @@ public class SensorDataController {
         this.repository = repository;
     }
 
+    public void anomalieDetector(double temp){
+        if(temp < 10 || temp > 30) {
+            System.out.println("Anomalie erkannt");
+        }
+    }
+
     @PostMapping
     public ResponseEntity<Void> receiveData(@RequestBody SensorDataDTO data) {
         SensorData entity = new SensorData(
@@ -26,6 +32,8 @@ public class SensorDataController {
                 data.getTemperature(),
                 data.getTimestamp()
         );
+
+        anomalieDetector(data.getTemperature());
         repository.save(entity);
         return ResponseEntity.ok().build();
     }
