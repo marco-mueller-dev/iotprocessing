@@ -1,8 +1,10 @@
 package com.example.common.dto;
 
+import java.io.Serializable;
 import java.time.Instant;
 
-public class SensorDataDTO {
+public class SensorDataDTO implements Serializable
+{
     private String sensorId;
     private double temperature;
     private Instant timestamp;
