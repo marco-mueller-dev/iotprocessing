@@ -3,6 +3,9 @@
 <head>
     <meta charset="UTF-8" />
     <title>Sensor Rate Control</title>
+
+    <!-- Chart.js CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
 
@@ -11,7 +14,12 @@
 <input type="number" id="rate" value="3000" />
 <button onclick="updateRate()">Set Rate (ms)</button>
 
-<script src="/function.js"></script>
+<hr>
+
+<h2>Live Sensor Temperatur</h2>
+<canvas id="sensorChart" width="800" height="400"></canvas>
+
+<script src="function.js"></script>
 
 </body>
 </html>
