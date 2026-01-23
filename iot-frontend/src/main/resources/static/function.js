@@ -1,53 +1,137 @@
-let chart;
+// ------------------------------
+// Konfiguration
+// ------------------------------
+const BACKEND_URL = "http://localhost:8082/api/sensor/latest";
+const REFRESH_INTERVAL_MS = 5000;
 
-function updateRate() {
-    const rate = document.getElementById("rate").value;
+const MIN_TEMP = -500;
+const MAX_TEMP = 500;
+const ANOMALY_THRESHOLD = 100;
 
-    fetch("http://localhost:8082/config/rate?millis=" + rate, {
-        method: "POST"
-    })
-        .then(() => alert("Rate geändert!"))
-        .catch(err => console.error(err));
-}
+// Feste Device-Reihenfolge
+const devices = [
+    "Device-0", "Device-1", "Device-2", "Device-3", "Device-4",
+    "Device-5", "Device-6", "Device-7", "Device-8", "Device-9"
+];
 
-async function loadSensorData() {
-    const response = await fetch("http://localhost:8082/api/sensor/latest");
-    const data = await response.json();
+// Standardfarben pro Device
+const baseColors = [
+    "#ff6384", "#36a2eb", "#ffce56", "#4bc0c0", "#9966ff",
+    "#ff9f40", "#2ecc71", "#e74c3c", "#3498db", "#9b59b6"
+];
 
-    const labels = data.map(d => d.sensorId);
-    const values = data.map(d => d.temperature);
+const anomalyColor = "#ff0000"; // ROT bei Anomalie
 
-    if (!chart) {
-        const ctx = document.getElementById("sensorChart").getContext("2d");
+const temperatures = new Array(10).fill(0);
+let barColors = [...baseColors];
 
-        chart = new Chart(ctx, {
-            type: "bar",
-            data: {
-                labels: labels,
-                datasets: [{
-                    label: "Temperatur (°C)",
-                    data: values
-                }]
+let sensorChart = null;
+
+// ------------------------------
+// Chart Initialisierung
+// ------------------------------
+function initChart() {
+    const ctx = document.getElementById("sensorChart").getContext("2d");
+
+    sensorChart = new Chart(ctx, {
+        type: "bar",
+        data: {
+            labels: devices,
+            datasets: [{
+                label: "Temperatur (°C)",
+                data: temperatures,
+                backgroundColor: barColors
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+
+            animation: false, // wichtig: Basisanimation AUS
+
+            transitions: {
+                active: {
+                    animation: {
+                        duration: 800,
+                        easing: "easeInOutQuart"
+                    }
+                }
             },
-            options: {
-                responsive: true,
-                scales: {
-                    x: {
-                        title: { display: true, text: "Geräte" }
-                    },
-                    y: {
-                        title: { display: true, text: "Temperatur (°C)" }
+
+            scales: {
+                y: {
+                    min: MIN_TEMP,
+                    max: MAX_TEMP,
+                    title: {
+                        display: true,
+                        text: "Temperatur"
+                    }
+                },
+                x: {
+                    title: {
+                        display: true,
+                        text: "Geräte"
                     }
                 }
             }
+        }
+
+
+    });
+}
+
+// ------------------------------
+// Daten laden & Anomalien erkennen
+// ------------------------------
+async function loadSensorData() {
+    try {
+        const response = await fetch(BACKEND_URL);
+        const data = await response.json();
+
+        temperatures.fill(0);
+        barColors = [...baseColors];
+
+        data.forEach(entry => {
+            const index = devices.indexOf(entry.sensorId);
+            if (index !== -1) {
+                temperatures[index] = entry.temperature;
+
+                //  Anomalie-Check
+                if (
+                    entry.temperature > ANOMALY_THRESHOLD ||
+                    entry.temperature < -ANOMALY_THRESHOLD
+                ) {
+                    barColors[index] = anomalyColor;
+                }
+            }
         });
-    } else {
-        chart.data.labels = labels;
-        chart.data.datasets[0].data = values;
-        chart.update();
+
+        sensorChart.data.datasets[0].backgroundColor = barColors;
+        sensorChart.update("active");
+
+    } catch (error) {
+        console.error("Fehler beim Laden der Sensordaten:", error);
     }
 }
 
-// initial + refresh
-loadSensorData();
-setInterval(loadSensorData, 5000);
+// ------------------------------
+// Generator Rate ändern
+// ------------------------------
+function updateRate() {
+    const rate = document.getElementById("rate").value;
+
+    fetch(`http://localhost:8082/config/rate?millis=${rate}`, {
+        method: "POST"
+    })
+        .then(() => alert("Rate geändert!"))
+        .catch(err => console.error("Rate-Update fehlgeschlagen", err));
+}
+
+// ------------------------------
+// Start
+// ------------------------------
+window.onload = () => {
+    initChart();
+    loadSensorData();
+    setInterval(loadSensorData, REFRESH_INTERVAL_MS);
+};
