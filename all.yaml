@@ -73,19 +73,6 @@ spec:
       labels:
         app: kafka
     spec:
-      initContainers:
-        - name: wait-for-zookeeper
-          image: busybox
-          command:
-            - sh
-            - -c
-            - |
-              echo "Waiting for Zookeeper..."
-              until nc -z zookeeper 2181; do
-                echo "Zookeeper not ready yet, sleeping 2s..."
-                sleep 2
-              done
-              echo "Zookeeper is ready!"
       containers:
         - name: kafka
           image: confluentinc/cp-kafka:7.5.0
@@ -93,17 +80,18 @@ spec:
             - name: KAFKA_BROKER_ID
               value: "1"
             - name: KAFKA_ZOOKEEPER_CONNECT
-              value: "zookeeper:2181"
-            - name: KAFKA_LISTENERS
-              value: PLAINTEXT://0.0.0.0:9092
+              value: zookeeper:2181
             - name: KAFKA_ADVERTISED_LISTENERS
               value: PLAINTEXT://kafka:9092
+            - name: KAFKA_LISTENERS
+              value: PLAINTEXT://0.0.0.0:9092
             - name: KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR
               value: "1"
             - name: KAFKA_AUTO_CREATE_TOPICS_ENABLE
               value: "true"
           ports:
             - containerPort: 9092
+
 
 ---
 apiVersion: v1
