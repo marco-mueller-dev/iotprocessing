@@ -209,7 +209,7 @@ spec:
             - name: SPRING_KAFKA_BOOTSTRAP_SERVERS
               value: kafka-service:9092
           ports:
-            - containerPort: 8080
+            - containerPort: 8081
 
 ---
 # IoT Data Generator Deployment
@@ -240,7 +240,7 @@ spec:
             - name: SPRING_KAFKA_BOOTSTRAP_SERVERS
               value: kafka-service:9092
           ports:
-            - containerPort: 8080
+            - containerPort: 8082
 
 ---
 # IoT Frontend Deployment
@@ -262,7 +262,7 @@ spec:
         - name: iot-frontend
           image: gcr.io/iot-processing-485214/iot-frontend:latest
           ports:
-            - containerPort: 80
+            - containerPort: 8080
 
 ---
 # IoT Frontend Service
@@ -277,4 +277,4 @@ spec:
   ports:
     - protocol: TCP
       port: 80
-      targetPort: 80
+      targetPort: 8080
