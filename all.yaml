@@ -168,7 +168,7 @@ spec:
     spec:
       containers:
         - name: iot-processor
-          image: gcr.io/[PROJECT_ID]/iot-processor:latest
+          image: gcr.io/iot-processing-485214/iot-processor:latest
           ports:
             - containerPort: 8080
           env:
@@ -213,7 +213,7 @@ spec:
     spec:
       containers:
         - name: iot-data-generator
-          image: gcr.io/[PROJECT_ID]/iot-data-generator:latest
+          image: gcr.io/iot-processing-485214/iot-data-generator:latest
           ports:
             - containerPort: 8080
           env:
@@ -258,7 +258,7 @@ spec:
     spec:
       containers:
         - name: iot-frontend
-          image: gcr.io/[PROJECT_ID]/iot-frontend:latest
+          image: gcr.io/iot-processing-485214/iot-frontend:latest
           ports:
             - containerPort: 80
 ---
