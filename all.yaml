@@ -1,5 +1,5 @@
 ---
-# PVC für Postgres
+# PersistentVolumeClaim für Postgres
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
@@ -12,11 +12,11 @@ spec:
       storage: 1Gi
 
 ---
-# PVC für Zookeeper
+# PersistentVolumeClaim für Kafka
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: zookeeper-pvc
+  name: kafka-pvc
 spec:
   accessModes:
     - ReadWriteOnce
@@ -62,13 +62,6 @@ spec:
               value: "2000"
           ports:
             - containerPort: 2181
-          volumeMounts:
-            - name: zookeeper-data
-              mountPath: /var/lib/zookeeper
-      volumes:
-        - name: zookeeper-data
-          persistentVolumeClaim:
-            claimName: zookeeper-pvc
 
 ---
 # Kafka Service
@@ -116,6 +109,13 @@ spec:
               value: "true"
           ports:
             - containerPort: 9092
+          volumeMounts:
+            - name: kafka-data
+              mountPath: /var/lib/kafka/data
+      volumes:
+        - name: kafka-data
+          persistentVolumeClaim:
+            claimName: kafka-pvc
 
 ---
 # Postgres Service
