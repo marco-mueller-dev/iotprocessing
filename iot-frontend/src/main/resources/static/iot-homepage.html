@@ -3,15 +3,28 @@
 <head>
     <meta charset="UTF-8" />
     <title>Sensor Rate Control</title>
+    <link rel="stylesheet" href="iot.css">
+
+    <!-- Chart.js CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
 
-<h2>Generator Rate ändern</h2>
+<div class="control-panel">
+    <h2>Generator Rate ändern</h2>
 
-<input type="number" id="rate" value="3000" />
-<button onclick="updateRate()">Set Rate (ms)</button>
+    <input type="number" id="rate" value="3000" />
+    <button onclick="updateRate()">Set Rate (ms)</button>
+</div>
 
-<script src="/function.js"></script>
+<h2>Live Sensor Temperatur</h2>
+
+<div id="chart-container">
+    <canvas id="sensorChart"></canvas>
+</div>
+
+
+<script src="function.js"></script>
 
 </body>
 </html>
