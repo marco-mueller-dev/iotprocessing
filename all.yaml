@@ -94,7 +94,7 @@ spec:
       initContainers:
         - name: fix-permissions
           image: busybox
-          command: ['sh', '-c', 'chown -R 1000:1000 /var/lib/kafka/data']
+          command: ['sh', '-c', 'chown -R 1000:1000 /var/lib/kafka/data && rm -rf /var/lib/kafka/data/lost+found']
           volumeMounts:
             - name: kafka-data
               mountPath: /var/lib/kafka/data
