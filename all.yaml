@@ -64,11 +64,11 @@ spec:
             - containerPort: 2181
 
 ---
-# Kafka Service
+# Kafka Service - RENAMED to avoid Kubernetes env variable conflict
 apiVersion: v1
 kind: Service
 metadata:
-  name: kafka
+  name: kafka-service
 spec:
   ports:
     - port: 9092
@@ -76,7 +76,7 @@ spec:
     app: kafka
 
 ---
-# Kafka Deployment - COMPLETE FIX
+# Kafka Deployment - FIXED
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -107,7 +107,7 @@ spec:
             - name: KAFKA_ZOOKEEPER_CONNECT
               value: "zookeeper:2181"
             - name: KAFKA_ADVERTISED_LISTENERS
-              value: PLAINTEXT://kafka:9092
+              value: PLAINTEXT://kafka-service:9092
             - name: KAFKA_LISTENER_SECURITY_PROTOCOL_MAP
               value: PLAINTEXT:PLAINTEXT
             - name: KAFKA_LISTENERS
@@ -207,7 +207,7 @@ spec:
             - name: SPRING_DATASOURCE_PASSWORD
               value: postgres
             - name: SPRING_KAFKA_BOOTSTRAP_SERVERS
-              value: kafka:9092
+              value: kafka-service:9092
           ports:
             - containerPort: 8080
 
@@ -238,7 +238,7 @@ spec:
             - name: SPRING_DATASOURCE_PASSWORD
               value: postgres
             - name: SPRING_KAFKA_BOOTSTRAP_SERVERS
-              value: kafka:9092
+              value: kafka-service:9092
           ports:
             - containerPort: 8080
 
