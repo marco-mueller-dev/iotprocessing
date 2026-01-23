@@ -262,7 +262,7 @@ spec:
         - name: iot-frontend
           image: gcr.io/iot-processing-485214/iot-frontend:latest
           ports:
-            - containerPort: 8080
+            - containerPort: 80
 
 ---
 # IoT Frontend Service
