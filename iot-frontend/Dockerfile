@@ -1,6 +1,9 @@
 FROM nginx:alpine
 
+# Copy static files
 COPY iot-frontend/src/main/resources/static /usr/share/nginx/html
 
-EXPOSE 80
+# Copy nginx configuration
+COPY nginx.conf /etc/nginx/conf.d/default.conf
 
+EXPOSE 80
