@@ -12,7 +12,7 @@ Daten gesendet werden. Die Anwendung ist auf der Google Cloud implementiert.
 - warten auf Start
 - im Browser unter (http://localhost:8080/iot-homepage.html) das Frontend aufrufen
 
-## im Browser 
+### im Browser Cluster aufrufen 
 
 -http://34.185.153.50:8080/iot-homepage.html aufrufen
 
