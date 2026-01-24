@@ -1,7 +1,7 @@
 // ------------------------------
 // Konfiguration
 // ------------------------------
-const BACKEND_URL = "http://iot-data-generator-service:8082/api/sensor/latest";
+const BACKEND_URL = "/api/sensor/latest"; // Changed to relative URL
 const REFRESH_INTERVAL_MS = 5000;
 
 const MIN_TEMP = -500;
@@ -75,8 +75,6 @@ function initChart() {
                 }
             }
         }
-
-
     });
 }
 
@@ -120,7 +118,7 @@ async function loadSensorData() {
 function updateRate() {
     const rate = document.getElementById("rate").value;
 
-    fetch(`http://iot-data-generator-service:8082/config/rate?millis=${rate}`, {
+    fetch(`/config/rate?millis=${rate}`, { // Changed to relative URL
         method: "POST"
     })
         .then(() => alert("Rate geändert!"))
