@@ -1,7 +1,7 @@
 // ------------------------------
 // Konfiguration
 // ------------------------------
-const BACKEND_URL = "http://iot-data-generator:8082/api/sensor/latest";
+const BACKEND_URL = "http://iot-data-generator-service:8082/api/sensor/latest";
 const REFRESH_INTERVAL_MS = 5000;
 
 const MIN_TEMP = -500;
@@ -120,7 +120,7 @@ async function loadSensorData() {
 function updateRate() {
     const rate = document.getElementById("rate").value;
 
-    fetch(`http://iot-data-generator:8082/config/rate?millis=${rate}`, {
+    fetch(`http://iot-data-generator-service:8082/config/rate?millis=${rate}`, {
         method: "POST"
     })
         .then(() => alert("Rate geändert!"))
