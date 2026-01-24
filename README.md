@@ -3,7 +3,7 @@
 In diesem Projekt im Bereich "Cloud Native Software Engineering" sendet eine fiktive IoT Api per Kafka
 daten an einen Processor, dieser speichert die gesendeten Daten persistent auf einer Postgres Datenbank.
 Im Frontend sieht man die gesendeten Temparatur Daten und kann die Rate einstellen, mit der der neue 
-Daten gesendet werden. Die Anwendung ist auf der Google Cloud implementiert.
+Daten gesendet werden. Die Anwendung ist auf der Google Cloud deployed.
 
 ## Quickstart
 
