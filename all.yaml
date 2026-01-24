@@ -217,7 +217,7 @@ kind: Service
 metadata:
   name: iot-data-generator-service
 spec:
-  type: LoadBalancer
+  type: ClusterIP
   selector:
     app: iot-data-generator
   ports:
