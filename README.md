@@ -1,15 +1,20 @@
 # Iot Processing
 
 In diesem Projekt im Bereich "Cloud Native Software Engineering" sendet eine fiktive IoT Api per Kafka
-daten an einen Processor, dieser speicehrt die gesendeten Daten persistent auf einer Postgres Datenbank.
+daten an einen Processor, dieser speichert die gesendeten Daten persistent auf einer Postgres Datenbank.
 Im Frontend sieht man die gesendeten Temparatur Daten und kann die Rate einstellen, mit der der neue 
-Daten gesendet werden.
+Daten gesendet werden. Die Anwendung ist auf der Google Cloud implementiert.
 
 ## Quickstart
 
+### Lokal
 - docker compose up -d 
 - warten auf Start
 - im Browser unter (http://localhost:8080/iot-homepage.html) das Frontend aufrufen
+
+## im Browser 
+
+-http://34.185.153.50:8080/iot-homepage.html aufrufen
 
 ## Komponenten
 
