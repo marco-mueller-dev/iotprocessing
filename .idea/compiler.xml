@@ -6,17 +6,20 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="iot-frontend" />
+        <module name="common" />
+        <module name="iot-data-generator" />
         <module name="iot-processor" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="iotprocessing" target="21" />
-    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="common" options="" />
+      <module name="iot-data-generator" options="-parameters" />
+      <module name="iot-frontend" options="" />
       <module name="iot-processor" options="-parameters" />
-      <module name="iotprocessing" options="-parameters" />
+      <module name="iotprocessing" options="" />
     </option>
   </component>
 </project>
