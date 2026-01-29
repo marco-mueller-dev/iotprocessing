@@ -1,6 +1,7 @@
 package com.example.common.repository;
 
 import com.example.common.entity.SensorData;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 
@@ -17,5 +18,8 @@ WHERE sd.timestamp = (
 )
 """)
     List<SensorData> findLatestPerDevice();
+
+    @Query("SELECT sd.id FROM SensorData sd ORDER BY sd.timestamp ASC")
+    List<Long> findOldestEntries(PageRequest pageable);
 
 }

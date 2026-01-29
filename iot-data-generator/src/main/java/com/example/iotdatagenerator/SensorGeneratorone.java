@@ -30,6 +30,10 @@ public class SensorGeneratorone {
         System.out.println("Neue Rate: " + newRate + " ms");
     }
 
+    public AtomicLong getRateMillis() {
+        return this.rateMillis;
+    }
+
 
     @PostConstruct
     public void start() {

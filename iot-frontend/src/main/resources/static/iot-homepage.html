@@ -4,27 +4,64 @@
     <meta charset="UTF-8" />
     <title>Sensor Rate Control</title>
     <link rel="stylesheet" href="iot.css">
-
-    <!-- Chart.js CDN -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
+<!-- Control Panel oben -->
+<div class="top-controls">
+    <div class="control-panel">
+        <h2>Generator Rate ändern</h2>
+        <input type="number" id="rate" value="3000" />
+        <button onclick="updateRate()">Set Rate (ms)</button>
+    </div>
 
-<div class="control-panel">
-    <h2>Generator Rate ändern</h2>
-
-    <input type="number" id="rate" value="3000" />
-    <button onclick="updateRate()">Set Rate (ms)</button>
+    <div class="rate-display">
+        <h2>Aktuelle Rate</h2>
+        <div class="rate-value">
+            <span class="rate-number" id="currentRate">-</span>
+            <span class="rate-unit">ms</span>
+        </div>
+    </div>
 </div>
 
 <h2>Live Sensor Temperatur</h2>
 
-<div id="chart-container">
-    <canvas id="sensorChart"></canvas>
+<!-- Chart und Right Panel nebeneinander -->
+<div class="main-container">
+    <div id="chart-container">
+        <canvas id="sensorChart"></canvas>
+    </div>
+
+    <div class="right-panel">
+        <div class="info-box">
+            <h3>Datenbank Info</h3>
+            <div class="db-count">
+                <span class="label">Anzahl Einträge:</span>
+                <span class="count" id="dbCount">-</span>
+            </div>
+        </div>
+
+        <div class="delete-box">
+            <h3>Einträge löschen</h3>
+            <label for="deleteCount">Anzahl zu löschen:</label>
+            <input type="number" id="deleteCount" min="1" step="1" placeholder="z.B. 100" />
+            <button onclick="requestDelete()" class="delete-btn">Löschen</button>
+        </div>
+    </div>
 </div>
 
+<!-- Bestätigungs-Modal -->
+<div id="confirmModal" class="modal">
+    <div class="modal-content">
+        <h3>⚠️ Bestätigung erforderlich</h3>
+        <p id="confirmMessage"></p>
+        <div class="modal-buttons">
+            <button onclick="confirmDelete()" class="confirm-btn">Ja, löschen</button>
+            <button onclick="closeModal()" class="cancel-btn">Abbrechen</button>
+        </div>
+    </div>
+</div>
 
 <script src="function.js"></script>
-
 </body>
 </html>

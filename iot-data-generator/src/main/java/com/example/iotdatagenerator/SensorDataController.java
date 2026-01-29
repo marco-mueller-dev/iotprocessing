@@ -1,39 +1,53 @@
 package com.example.iotdatagenerator;
 
 import com.example.common.repository.SensorDataRepository;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.http.ResponseEntity;
+import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.bind.annotation.*;
 
-import java.time.Instant;
-import java.util.List;
-import java.util.stream.Collectors;
+import java.util.HashMap;
+import java.util.Map;
 
 @RestController
 @RequestMapping("/api/sensor")
-@CrossOrigin(origins = "*")
 public class SensorDataController {
 
-    private final SensorDataRepository repository;
-
-    public SensorDataController(SensorDataRepository repository) {
-        this.repository = repository;
-    }
+    @Autowired
+    private SensorDataRepository sensorDataRepository;
 
     @GetMapping("/latest")
-    public List<SensorDataDTO> getLatestPerDevice() {
-        return repository.findLatestPerDevice().stream()
-                .map(sd -> new SensorDataDTO(
-                        sd.getSensorId(),
-                        sd.getTemperature()
-                ))
-                .toList();
+    public ResponseEntity<?> getLatestData() {
+        return ResponseEntity.ok(sensorDataRepository.findLatestPerDevice());
     }
 
-    public record SensorDataDTO(String sensorId, double temperature) {}
+    @GetMapping("/count")
+    public ResponseEntity<Long> getCount() {
+        return ResponseEntity.ok(sensorDataRepository.count());
+    }
+
+    @DeleteMapping("/delete")
+    @Transactional // ✅ Wichtig für Delete-Operationen
+    public ResponseEntity<Map<String, Integer>> deleteOldestEntries(@RequestParam int count) {
+        if (count < 1) {
+            return ResponseEntity.badRequest().build();
+        }
+
+        try {
+            // Hole die IDs der ältesten Einträge
+            var oldestEntries = sensorDataRepository.findOldestEntries(PageRequest.of(0, count));
+
+            // Lösche diese Einträge
+            sensorDataRepository.deleteAllById(oldestEntries);
+
+            Map<String, Integer> result = new HashMap<>();
+            result.put("deleted", oldestEntries.size());
+
+            return ResponseEntity.ok(result);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return ResponseEntity.internalServerError().build();
+        }
+    }
 }
-
-
-
-
