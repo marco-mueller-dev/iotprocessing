@@ -22,6 +22,9 @@ public class GeneratorConfigController {
         if (millis < 100) {
             return ResponseEntity.badRequest().build();
         }
+        if (millis > 30000) {
+            return ResponseEntity.badRequest().build();
+        }
         generator.setRateMillis(millis);
         return ResponseEntity.ok().build();
     }
