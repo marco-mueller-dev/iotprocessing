@@ -4,43 +4,57 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="923b67bd-e91b-4b38-8ade-a3863bd6135d" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitattributes" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/compose.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mvnw" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mvnw.cmd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cnse/iotprocessing/IoTProcessingApplication.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/cnse/iotprocessing/IoTProcessingApplicationTests.java" beforeDir="false" />
+    <list default="true" id="923b67bd-e91b-4b38-8ade-a3863bd6135d" name="Changes" comment="#12, Docker Compose bearbeitet, Namensgebung angepasst, damit Lokal über Docker composed werden kann">
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/common/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/example/common/repository/SensorDataRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/com/example/common/repository/SensorDataRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/iot-data-generator/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/iot-data-generator/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/iot-data-generator/src/main/java/com/example/iotdatagenerator/GeneratorConfigController.java" beforeDir="false" afterPath="$PROJECT_DIR$/iot-data-generator/src/main/java/com/example/iotdatagenerator/GeneratorConfigController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/iot-data-generator/src/main/java/com/example/iotdatagenerator/SensorDataController.java" beforeDir="false" afterPath="$PROJECT_DIR$/iot-data-generator/src/main/java/com/example/iotdatagenerator/SensorDataController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/iot-data-generator/src/main/java/com/example/iotdatagenerator/SensorGeneratorone.java" beforeDir="false" afterPath="$PROJECT_DIR$/iot-data-generator/src/main/java/com/example/iotdatagenerator/SensorGeneratorone.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/iot-frontend/src/main/resources/static/function.js" beforeDir="false" afterPath="$PROJECT_DIR$/iot-frontend/src/main/resources/static/function.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/iot-frontend/src/main/resources/static/iot-homepage.html" beforeDir="false" afterPath="$PROJECT_DIR$/iot-frontend/src/main/resources/static/iot-homepage.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/iot-frontend/src/main/resources/static/iot.css" beforeDir="false" afterPath="$PROJECT_DIR$/iot-frontend/src/main/resources/static/iot.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Dockerfile" />
+        <option value="Class" />
+        <option value="CSS File" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="entwicklung" />
+        <entry key="$PROJECT_DIR$" value="#12-Lokal-Fix" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "LarsGr04"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;LarsGr04&quot;
   }
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/marco-mueller-dev/iotprocessing.git",
-    "accountId": "0dc51c90-60ff-4d43-b1b8-8a7dd9c97d30"
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/marco-mueller-dev/iotprocessing.git&quot;,
+    &quot;accountId&quot;: &quot;0dc51c90-60ff-4d43-b1b8-8a7dd9c97d30&quot;
   }
-}]]></component>
+}</component>
+  <component name="KubernetesApiPersistence">{}</component>
+  <component name="KubernetesApiProvider">{
+  &quot;isMigrated&quot;: true
+}</component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
       <MavenGeneralSettings>
@@ -48,10 +62,10 @@
       </MavenGeneralSettings>
     </option>
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "customColor": "",
-  "associatedIndex": 4
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 4
+}</component>
   <component name="ProjectId" id="37USJaCxM6CFlLRoMaIgoeNXEtV" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -60,24 +74,51 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Maven.iotprocessing [clean].executor": "Run",
+    "Maven.iotprocessing [install].executor": "Run",
+    "Maven.iotprocessing [package].executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "#1-Projekt-Struktur",
+    "git-widget-placeholder": "#13-Tabelle-Anzeigen+Löschen",
     "jdk.selected.JAVA_MODULE": "openjdk-23",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Users/lars_/Desktop/iotprocessing",
+    "list.type.of.created.stylesheet": "CSS",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
+    "run.configurations.included.in.services": "true",
     "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "postgresql"
+    ]
   }
 }]]></component>
+  <component name="RunDashboard">
+    <option name="configurationTypes">
+      <set>
+        <option value="KtorApplicationConfigurationType" />
+        <option value="MicronautRunConfigurationType" />
+        <option value="QuarkusRunConfigurationType" />
+        <option value="SpringBootApplicationConfigurationType" />
+      </set>
+    </option>
+  </component>
   <component name="RunManager" selected="Spring Boot.IoTProcessingApplication">
     <configuration name="IoTProcessingApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
       <module name="iotprocessing" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="cnse.iotprocessing.IoTProcessingApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="IotDataGeneratorApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="iot-data-generator" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.iotdatagenerator.IotDataGeneratorApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -93,8 +134,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-9823dce3aa75-28b599e66164-intellij.indexing.shared.core-IU-242.23726.103" />
-        <option value="bundled-js-predefined-d6986cc7102b-5c90d61e3bab-JavaScript-IU-242.23726.103" />
+        <option value="bundled-jdk-9823dce3aa75-28b599e66164-intellij.indexing.shared.core-IU-242.26775.15" />
+        <option value="bundled-js-predefined-d6986cc7102b-5c90d61e3bab-JavaScript-IU-242.26775.15" />
       </set>
     </attachedChunks>
   </component>
@@ -107,10 +148,349 @@
       <option name="presentableId" value="Default" />
       <updated>1766956087070</updated>
       <workItem from="1766956089242" duration="1004000" />
+      <workItem from="1769082502598" duration="16650000" />
+      <workItem from="1769116040804" duration="381000" />
+      <workItem from="1769118328421" duration="5083000" />
+      <workItem from="1769191877040" duration="23782000" />
+      <workItem from="1769217378765" duration="24000" />
+      <workItem from="1769217417268" duration="1110000" />
+      <workItem from="1769262171618" duration="2121000" />
+      <workItem from="1769463591384" duration="33000" />
+      <workItem from="1769693841851" duration="4874000" />
     </task>
+    <task id="LOCAL-00001" summary="#8-Containerisierung, Docker startet Applikation jetzt, Frontend funktioniert + Backend alles in Docker">
+      <option name="closed" value="true" />
+      <created>1769093336025</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1769093336025</updated>
+    </task>
+    <task id="LOCAL-00002" summary="#10-Frontend-Upgrade, Diagramm erstellt, ausbaufähig, aber funktionstüchtig">
+      <option name="closed" value="true" />
+      <created>1769100717157</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1769100717157</updated>
+    </task>
+    <task id="LOCAL-00003" summary="#10-Frontend-Upgrade, SensorDataController vergessen">
+      <option name="closed" value="true" />
+      <created>1769100756325</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1769100756325</updated>
+    </task>
+    <task id="LOCAL-00004" summary="#10-Frontend-Upgrade, Chart + CSS">
+      <option name="closed" value="true" />
+      <created>1769128722632</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1769128722633</updated>
+    </task>
+    <task id="LOCAL-00005" summary="#10-Frontend-Upgrade, Chart + CSS">
+      <option name="closed" value="true" />
+      <created>1769196354067</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1769196354067</updated>
+    </task>
+    <task id="LOCAL-00006" summary="#11, List import">
+      <option name="closed" value="true" />
+      <created>1769196408309</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1769196408309</updated>
+    </task>
+    <task id="LOCAL-00007" summary="#11, YAML in Main">
+      <option name="closed" value="true" />
+      <created>1769197362861</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1769197362861</updated>
+    </task>
+    <task id="LOCAL-00008" summary="#11, ID in Yaml eingefügt">
+      <option name="closed" value="true" />
+      <created>1769197644284</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1769197644284</updated>
+    </task>
+    <task id="LOCAL-00009" summary="#11, YAML verändert">
+      <option name="closed" value="true" />
+      <created>1769197917754</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1769197917754</updated>
+    </task>
+    <task id="LOCAL-00010" summary="#11, YAML verändert">
+      <option name="closed" value="true" />
+      <created>1769198235844</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1769198235844</updated>
+    </task>
+    <task id="LOCAL-00011" summary="#11, YAML verändert">
+      <option name="closed" value="true" />
+      <created>1769198485113</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1769198485113</updated>
+    </task>
+    <task id="LOCAL-00012" summary="#11, YAML verändert">
+      <option name="closed" value="true" />
+      <created>1769199611482</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1769199611482</updated>
+    </task>
+    <task id="LOCAL-00013" summary="#11, YAML verändert">
+      <option name="closed" value="true" />
+      <created>1769200099402</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1769200099402</updated>
+    </task>
+    <task id="LOCAL-00014" summary="#11, YAML verändert">
+      <option name="closed" value="true" />
+      <created>1769200540078</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1769200540078</updated>
+    </task>
+    <task id="LOCAL-00015" summary="#11, YAML verändert">
+      <option name="closed" value="true" />
+      <created>1769201944853</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1769201944853</updated>
+    </task>
+    <task id="LOCAL-00016" summary="#11, YAML verändert">
+      <option name="closed" value="true" />
+      <created>1769202615079</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1769202615079</updated>
+    </task>
+    <task id="LOCAL-00017" summary="#11, YAML verändert">
+      <option name="closed" value="true" />
+      <created>1769203376325</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1769203376325</updated>
+    </task>
+    <task id="LOCAL-00018" summary="#11, YAML verändert">
+      <option name="closed" value="true" />
+      <created>1769203659517</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1769203659517</updated>
+    </task>
+    <task id="LOCAL-00019" summary="#11, YAML verändert">
+      <option name="closed" value="true" />
+      <created>1769203852436</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1769203852436</updated>
+    </task>
+    <task id="LOCAL-00020" summary="#11, YAML verändert">
+      <option name="closed" value="true" />
+      <created>1769204404230</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1769204404230</updated>
+    </task>
+    <task id="LOCAL-00021" summary="#11, YAML verändert">
+      <option name="closed" value="true" />
+      <created>1769204627711</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1769204627711</updated>
+    </task>
+    <task id="LOCAL-00022" summary="#11, YAML verändert">
+      <option name="closed" value="true" />
+      <created>1769204948705</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1769204948705</updated>
+    </task>
+    <task id="LOCAL-00023" summary="#11, YAML verändert">
+      <option name="closed" value="true" />
+      <created>1769206498504</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1769206498504</updated>
+    </task>
+    <task id="LOCAL-00024" summary="#11, YAML verändert">
+      <option name="closed" value="true" />
+      <created>1769206737856</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1769206737856</updated>
+    </task>
+    <task id="LOCAL-00025" summary="#11, YAML verändert">
+      <option name="closed" value="true" />
+      <created>1769207273021</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1769207273021</updated>
+    </task>
+    <task id="LOCAL-00026" summary="#11, YAML verändert">
+      <option name="closed" value="true" />
+      <created>1769207998944</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1769207998944</updated>
+    </task>
+    <task id="LOCAL-00027" summary="#11, Kafka unbenannt">
+      <option name="closed" value="true" />
+      <created>1769208475505</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1769208475505</updated>
+    </task>
+    <task id="LOCAL-00028" summary="#11, Kafka unbenannt">
+      <option name="closed" value="true" />
+      <created>1769208645365</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1769208645365</updated>
+    </task>
+    <task id="LOCAL-00029" summary="#11, Kafka unbenannt">
+      <option name="closed" value="true" />
+      <created>1769210942119</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1769210942119</updated>
+    </task>
+    <task id="LOCAL-00030" summary="#11, YAML">
+      <option name="closed" value="true" />
+      <created>1769211468749</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1769211468749</updated>
+    </task>
+    <task id="LOCAL-00031" summary="#11, YAML">
+      <option name="closed" value="true" />
+      <created>1769211805781</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1769211805781</updated>
+    </task>
+    <task id="LOCAL-00032" summary="#11, Localhost entfernt">
+      <option name="closed" value="true" />
+      <created>1769212399930</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1769212399930</updated>
+    </task>
+    <task id="LOCAL-00033" summary="#11, Localhost entfernt">
+      <option name="closed" value="true" />
+      <created>1769214570609</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1769214570609</updated>
+    </task>
+    <task id="LOCAL-00034" summary="#11, Localhost entfernt">
+      <option name="closed" value="true" />
+      <created>1769214676941</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1769214676941</updated>
+    </task>
+    <task id="LOCAL-00035" summary="#11, Localhost entfernt">
+      <option name="closed" value="true" />
+      <created>1769215734327</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1769215734327</updated>
+    </task>
+    <task id="LOCAL-00036" summary="#11, Localhost entfernt">
+      <option name="closed" value="true" />
+      <created>1769216080802</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1769216080802</updated>
+    </task>
+    <task id="LOCAL-00037" summary="#11, Port verändert">
+      <option name="closed" value="true" />
+      <created>1769216479233</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1769216479233</updated>
+    </task>
+    <task id="LOCAL-00038" summary="#11, Backend Porting">
+      <option name="closed" value="true" />
+      <created>1769217552472</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1769217552472</updated>
+    </task>
+    <task id="LOCAL-00039" summary="#12, Docker Compose bearbeitet, Namensgebung angepasst, damit Lokal über Docker composed werden kann">
+      <option name="closed" value="true" />
+      <created>1769263204702</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1769263204702</updated>
+    </task>
+    <option name="localTasksCounter" value="40" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="#8-Containerisierung, Docker startet Applikation jetzt, Frontend funktioniert + Backend alles in Docker" />
+    <MESSAGE value="#10-Frontend-Upgrade, Diagramm erstellt, ausbaufähig, aber funktionstüchtig" />
+    <MESSAGE value="#10-Frontend-Upgrade, SensorDataController vergessen" />
+    <MESSAGE value="#10-Frontend-Upgrade, Chart + CSS" />
+    <MESSAGE value="#11, List import" />
+    <MESSAGE value="#11, YAML in Main" />
+    <MESSAGE value="#11, ID in Yaml eingefügt" />
+    <MESSAGE value="#11, YAML verändert" />
+    <MESSAGE value="#11, Kafka unbenannt" />
+    <MESSAGE value="#11, YAML" />
+    <MESSAGE value="#11, Localhost entfernt" />
+    <MESSAGE value="#11, Port verändert" />
+    <MESSAGE value="#11, Backend Porting" />
+    <MESSAGE value="#12, Docker Compose bearbeitet, Namensgebung angepasst, damit Lokal über Docker composed werden kann" />
+    <option name="LAST_COMMIT_MESSAGE" value="#12, Docker Compose bearbeitet, Namensgebung angepasst, damit Lokal über Docker composed werden kann" />
   </component>
 </project>
