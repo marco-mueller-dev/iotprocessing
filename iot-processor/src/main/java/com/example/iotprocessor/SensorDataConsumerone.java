@@ -17,7 +17,7 @@ public class SensorDataConsumerone {
             SensorDataRepository repository,
             ObjectMapper objectMapper) {
         this.repository = repository;
-        this.objectMapper = objectMapper;  
+        this.objectMapper = objectMapper;
     }
 
     @KafkaListener(topics = "sensor-data")
@@ -35,7 +35,6 @@ public class SensorDataConsumerone {
                     data.getTemperature(),
                     data.getTimestamp()
             );
-
             repository.save(entity);
 
         } catch (Exception e) {
