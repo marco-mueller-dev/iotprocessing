@@ -2,8 +2,8 @@
 
 In diesem Projekt im Bereich "Cloud Native Software Engineering" sendet eine fiktive IoT Api per Kafka
 daten an einen Processor, dieser speichert die gesendeten Daten persistent auf einer Postgres Datenbank.
-Im Frontend sieht man die gesendeten Temparatur Daten und kann die Rate einstellen, mit der der neue 
-Daten gesendet werden. Die Anwendung ist auf der Google Cloud deployed.
+Im Frontend, welches mit NGIX erstellt wurde, sieht man die gesendeten Temparatur Daten und kann die Rate einstellen, mit der der neue 
+Daten gesendet werden und Einträge aus der Datenbänken löschen. Die Anwendung ist auf der Google Cloud deployed.
 
 ## Quickstart
 
@@ -14,7 +14,7 @@ Daten gesendet werden. Die Anwendung ist auf der Google Cloud deployed.
 
 ### im Browser Cluster aufrufen 
 
--http://34.185.153.50:8080/iot-homepage.html aufrufen
+-34.107.26.0:8080/iot-homepage.html aufrufen
 
 ## Komponenten
 
@@ -37,13 +37,15 @@ Daten gesendet werden. Die Anwendung ist auf der Google Cloud deployed.
 
 
 ## Bilder
-<img width="1912" height="906" alt="image" src="https://github.com/user-attachments/assets/1e75010f-7acb-43a7-a704-c643b3b1690f" />
+<img width="2536" height="943" alt="image" src="https://github.com/user-attachments/assets/61fd5a86-e765-4be1-a15d-6f02afac1bf1" />
+
 
 
 <img width="680" height="418" alt="image" src="https://github.com/user-attachments/assets/0c3ac307-1e2c-43c6-a37f-3ac34bba8864" />
 
 
 <img width="960" height="335" alt="image" src="https://github.com/user-attachments/assets/3a5747d7-514b-454b-a14c-e580cc260f72" />
+<img width="2207" height="410" alt="image" src="https://github.com/user-attachments/assets/fe54e9c2-5ad2-451b-9db8-fe42a2d03eef" />
 
 
 
