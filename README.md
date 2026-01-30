@@ -14,7 +14,7 @@ Daten gesendet werden. Die Anwendung ist auf der Google Cloud deployed.
 
 ### im Browser Cluster aufrufen 
 
--http://34.185.153.50:8080/iot-homepage.html aufrufen
+-34.107.26.0:8080/iot-homepage.html aufrufen
 
 ## Komponenten
 
