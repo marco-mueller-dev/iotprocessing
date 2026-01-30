@@ -17,7 +17,7 @@ public class SensorDataConsumerone {
             SensorDataRepository repository,
             ObjectMapper objectMapper) {
         this.repository = repository;
-        this.objectMapper = objectMapper;
+        this.objectMapper = objectMapper;  //wir haben nicht in den klassen gestern geändert oder
     }
 
     @KafkaListener(topics = "sensor-data")

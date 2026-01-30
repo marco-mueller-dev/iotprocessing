@@ -28,7 +28,7 @@ public class SensorDataController {
     }
 
     @DeleteMapping("/delete")
-    @Transactional // ✅ Wichtig für Delete-Operationen
+    @Transactional
     public ResponseEntity<Map<String, Integer>> deleteOldestEntries(@RequestParam int count) {
         if (count < 1) {
             return ResponseEntity.badRequest().build();
