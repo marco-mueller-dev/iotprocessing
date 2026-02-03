@@ -33,7 +33,7 @@ Daten gesendet werden und Einträge aus der Datenbänken löschen. Die Anwendung
 
 ## iot-frontend
 
-- stellt die Dtaen auf der Website dar
+- stellt die Daten auf der Website dar
 
 
 ## Bilder
