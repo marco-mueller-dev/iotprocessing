@@ -14,7 +14,7 @@ Daten gesendet werden und Einträge aus der Datenbänken löschen. Die Anwendung
 
 ### im Browser Cluster aufrufen 
 
--http://34.89.173.216:8080/iot-homepage.html aufrufen
+-http://34.185.153.50:8080/iot-homepage.html aufrufen
 
 ## Komponenten
 
